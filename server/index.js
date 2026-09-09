@@ -13,6 +13,9 @@ app.get('/api/ping', (req, res) => {
     res.json({ ok: true });
 });
 
+app.get('/', (req, res) => {
+  res.send('¡Servidor funcionando!');
+});
 
 app.get('/api/alquileres', async (req, res) => {
     try {
