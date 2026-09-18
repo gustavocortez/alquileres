@@ -5,7 +5,11 @@ import { PrismaClient } from '@prisma/client';
 const app = express();
 const prisma = new PrismaClient();
 
-app.use(cors());
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 //ruta prueba
